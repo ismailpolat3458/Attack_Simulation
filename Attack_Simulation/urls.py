@@ -15,11 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from ttp.views import vss
+from ttp.views import vss ,  T1140 , T1089
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('vss/', vss)
+    path('vss/', vss),
+    path('certutil/', T1140),
+    path('T1089/', T1089)
+
 
 
 ]

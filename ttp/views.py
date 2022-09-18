@@ -6,6 +6,7 @@
 from django.http import HttpResponse
 from windows_based_ttp import common
 from ttp.tests import ersin
+from windows_based_ttp import certutil , attack_T1089
 
 
 
@@ -26,6 +27,18 @@ def vss(request):
              "Then checks the status of that task, and deletes the task."
 
     return HttpResponse( ersin("a           ","b","c"))
+
+
+def T1140(request):
+    certutil.attack_T1140()
+
+    return HttpResponse(certutil.attack_T1140())
+
+
+def T1089(request):
+    attack_T1089.T1089()
+    return HttpResponse(attack_T1089.T1089())
+
 
 
 

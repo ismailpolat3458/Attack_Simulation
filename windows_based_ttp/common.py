@@ -102,11 +102,11 @@ def execute(command, hide_log=False, mute=False, timeout=30, wait=True, kill=Fal
 
 
     elif wait:
-        print("test1")
+
         output = ''
 
         p.stdin.write(os.linesep)
-        print("test2")
+
         while p.poll() is None:
             line = p.stdout.readline()
             if line:
@@ -130,6 +130,13 @@ def execute(command, hide_log=False, mute=False, timeout=30, wait=True, kill=Fal
         return p.returncode, output
     else:
         return p
+
+
+
+def remove_file(path):
+    if os.path.exists(path):
+        log('Removing %s' % path, log_type='-')
+        os.remove(path)
 
 
 
